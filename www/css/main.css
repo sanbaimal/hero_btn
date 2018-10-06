@@ -29,6 +29,14 @@ header.main-header h1 a:hover {
   color: #5093b7;
 }
 
+header.main-header h1 a.h1-small {
+  font-size: 53px;
+}
+
+header.main-header h1 a.h1-large {
+  font-size: 110px;
+}
+
 .btn-wrapper {
   width: 900px;
   display: block;
@@ -120,6 +128,12 @@ header.main-header h1 a:hover {
   }
   header.main-header h1 a {
     font-size: 36px;
+  }
+  header.main-header h1 a.h1-small {
+    font-size: 26px;
+  }
+  header.main-header h1 a.h1-large {
+    font-size: 46px;
   }
   .btn-wrapper {
     width: 100%;

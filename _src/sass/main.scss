@@ -21,6 +21,12 @@ body.main-body {
         &:hover {
           color: #5093b7;
         }
+        &.h1-small {
+          font-size: 53px;
+        }
+        &.h1-large {
+          font-size: 110px;
+        }
       }
     }
   }
@@ -103,6 +109,12 @@ body.main-body {
     padding: 32px 0;
     h1 a {
       font-size: 36px;
+      &.h1-small {
+        font-size: 26px;
+      }
+      &.h1-large {
+        font-size: 46px;
+      }
     }
   }
   .btn-wrapper {
