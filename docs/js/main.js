@@ -47,7 +47,7 @@ var stopSound = function() {
 function AudioPLay(voice) {
   stopSound();
   // サウンドを読み込む
-  getAudioBuffer('../vo/' + voice, function (buffer) {
+  getAudioBuffer('vo/' + voice, function (buffer) {
     // サウンドを再生
     playSound(buffer);
   });
