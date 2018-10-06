@@ -26,6 +26,8 @@ var getAudioBuffer = function (url, fn) {
 
 // サウンドを再生
 var playSound = function (buffer) {
+  context = new AudioContext();
+  context.createBufferSource().start(0);
   // source を作成
   source = context.createBufferSource();
   // buffer をセット
