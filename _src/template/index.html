@@ -12,12 +12,14 @@ var data = jsonData;
   <title>タイトル</title>
 </head>
 <body>
-  <h1>ひいろボタン</h1>
-  <ul>
+  <header class="main-header">
+    <h1>ひいろボタン</h1>
+  </header>
+  <ul class="btn-wrapper">
 <% for (var item in data.voice.category) { %>
 <% for (var i = 1; i < data.voice.category[item].num; i++) { %>
     <li>
-      <a href="javascript:void(0)" onclick="AudioPLay('se.mp3')"><%= data.voice.category[item].name %>_<%= i %></a>
+      <a href="javascript:void(0)" onclick="AudioPLay('se.mp3')"><%= data.voice.category[item].name %> <%= i %></a>
     </li>
 <% } %>
 <% } %>
