@@ -1,4 +1,6 @@
-
+<%
+var data = jsonData;
+%>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,9 +10,9 @@
 </head>
 <body>
   タイトルは
-  3
+  <%= data.voice.category.a %>
   ディスクリプションは
-  4
+  <%= data.voice.category.b %>
 </body>
 
 </html>

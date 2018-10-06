@@ -1,6 +1,12 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
+var fs = require('fs'),
+  gulp = require('gulp'),
+  sass = require('gulp-sass'),
+  ejs = require('gulp-ejs'),
+  rename = require('gulp-rename');
 
+//
+// Sass
+//
 // SassとCssの保存先を指定
 gulp.task('sass', function () {
   gulp.src('./_src/sass/**/*.scss')
@@ -16,4 +22,28 @@ gulp.task('sass-watch', ['sass'], function () {
 });
 
 // タスク"task-watch"がgulpと入力しただけでdefaultで実行されるようになる
-gulp.task('default', ['sass-watch']);
+gulp.task('default', ['sass-watch', 'ejs-watch']);
+
+
+//
+// json
+//
+gulp.task('ejs', function () {
+  var jsonFile = './_src/data/data.json',
+    tempFile = './_src/template/index.html',
+    json = JSON.parse(fs.readFileSync(jsonFile, 'utf8'));
+
+  gulp.src(tempFile)
+    .pipe(ejs({
+      jsonData: json
+    }))
+    .pipe(gulp.dest('./www/'));
+});
+
+//自動監視のタスクを作成
+gulp.task('ejs-watch', ['ejs'], function () {
+  var watcherjson = gulp.watch('./_src/data/**/*.json', ['ejs']);
+  var watcherhtml = gulp.watch('./_src/template/**/*.html', ['ejs']);
+  watcherjson.on('change', function (event) { });
+  watcherhtml.on('change', function (event) { });
+});

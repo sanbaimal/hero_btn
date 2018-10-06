@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "fs": "0.0.1-security",
     "gulp": "^3.9.1",
+    "gulp-ejs": "^3.2.0",
+    "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.1"
   },
   "scripts": {
