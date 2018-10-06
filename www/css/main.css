@@ -4,103 +4,156 @@ body.main-body {
   font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
 }
 
-@media screen and (min-width: 769px) {
-  /*　画面サイズ 769pxから適用　*/
-  header.main-header {
-    background-color: #276282;
-    padding: 60px 0;
-    display: block;
-  }
-  header.main-header h1 {
-    text-align: center;
-    display: block;
-    margin: 0px auto;
-  }
-  header.main-header h1 a {
-    color: #fff;
-    font-weight: bold;
-    font-size: 72px;
-    display: inline-block;
-    margin: 0;
-    text-decoration: none;
-  }
-  header.main-header h1 a:hover {
-    color: #5093b7;
-  }
-  .btn-wrapper {
-    width: 900px;
-    display: block;
-    margin: 30px auto;
-    padding: 30px;
-    background-color: #eff8fc;
-    border-radius: 5px;
-  }
-  .btn-wrapper li {
-    display: inline-block;
-    background-color: #276282;
-    text-align: center;
-    margin-right: 2px;
-  }
-  .btn-wrapper li:hover {
-    background-color: #eff8fc;
-  }
-  .btn-wrapper li:hover a {
-    color: #276282;
-    font-weight: bold;
-  }
-  .btn-wrapper li a {
-    height: 36px;
-    display: block;
-    padding: 0 20px;
-    line-height: 36px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #fff;
-    border: 5px solid #276282;
-  }
-  .contact-wrapper {
-    width: 900px;
-    display: block;
-    margin: 30px auto;
-    padding: 30px;
-    background-color: #eff8fc;
-    border-radius: 5px;
-  }
-  .contact-wrapper .hero-wrapper {
-    padding-bottom: 20px;
-    border-bottom: 1px dotted #276282;
-    margin-bottom: 20px;
-  }
-  .contact-wrapper h3 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #276282;
-    margin-bottom: 16px;
-  }
-  .contact-wrapper p {
-    color: #276282;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-  }
-  .contact-wrapper a {
-    color: #276282;
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: 12px;
-    font-size: 18px;
-  }
-  .contact-wrapper a:last-of-type {
-    margin-right: 0;
-  }
-  .contact-wrapper a:hover {
-    text-decoration: underline;
-  }
+header.main-header {
+  background-color: #276282;
+  padding: 60px 0;
+  display: block;
+}
+
+header.main-header h1 {
+  text-align: center;
+  display: block;
+  margin: 0px auto;
+}
+
+header.main-header h1 a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 72px;
+  display: inline-block;
+  margin: 0;
+  text-decoration: none;
+}
+
+header.main-header h1 a:hover {
+  color: #5093b7;
+}
+
+.btn-wrapper {
+  width: 900px;
+  display: block;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #eff8fc;
+  border-radius: 5px;
+}
+
+.btn-wrapper li {
+  display: inline-block;
+  background-color: #276282;
+  text-align: center;
+  margin-right: 6px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.btn-wrapper li:hover {
+  background-color: #eff8fc;
+}
+
+.btn-wrapper li:hover a {
+  color: #276282;
+  font-weight: bold;
+}
+
+.btn-wrapper li a {
+  border-radius: 4px;
+  height: 36px;
+  display: block;
+  padding: 0 20px;
+  line-height: 36px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  border: 5px solid #276282;
+}
+
+.contact-wrapper {
+  width: 900px;
+  display: block;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #eff8fc;
+  border-radius: 5px;
+}
+
+.contact-wrapper .hero-wrapper {
+  padding-bottom: 20px;
+  border-bottom: 1px dotted #276282;
+  margin-bottom: 20px;
+}
+
+.contact-wrapper h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #276282;
+  margin-bottom: 16px;
+}
+
+.contact-wrapper p {
+  color: #276282;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.contact-wrapper a {
+  color: #276282;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.contact-wrapper a:last-of-type {
+  margin-right: 0;
+}
+
+.contact-wrapper a:hover {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 768px) {
   /*　画面サイズ 768pxまで適用　*/
-  .content {
-    color: #red;
+  header.main-header {
+    padding: 32px 0;
+  }
+  header.main-header h1 a {
+    font-size: 36px;
+  }
+  .btn-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 15px;
+    padding: 12px;
+  }
+  .btn-wrapper li a {
+    height: 26px;
+    line-height: 26px;
+    padding: 0 8px;
+  }
+  .contact-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 12px;
+  }
+  .contact-wrapper .hero-wrapper {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
+  .contact-wrapper h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .contact-wrapper a {
+    margin-right: 6px;
+    font-size: 14px;
+  }
+  .contact-wrapper p {
+    font-size: 14px;
+  }
+  .main-wrapper {
+    padding: 15px;
   }
 }
