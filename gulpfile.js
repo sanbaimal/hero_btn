@@ -22,7 +22,7 @@ gulp.task('sass-watch', ['sass'], function () {
 });
 
 // タスク"task-watch"がgulpと入力しただけでdefaultで実行されるようになる
-gulp.task('default', ['sass-watch', 'ejs-watch']);
+gulp.task('default', ['sass-watch', 'json-watch', 'html-watch']);
 
 
 //
@@ -41,7 +41,13 @@ gulp.task('ejs', function () {
 });
 
 //自動監視のタスクを作成
-gulp.task('ejs-watch', ['ejs'], function () {
+gulp.task('json-watch', ['ejs'], function () {
   var watcherjson = gulp.watch('./_src/data/**/*.json', ['ejs']);
   watcherjson.on('change', function (event) { });
+});
+
+//自動監視のタスクを作成
+gulp.task('html-watch', ['ejs'], function () {
+  var watcherhtml = gulp.watch('./_src/template/**/*.html', ['ejs']);
+  watcherhtml.on('change', function (event) { });
 });
