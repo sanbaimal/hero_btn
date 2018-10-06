@@ -58,6 +58,44 @@ body.main-body {
     color: #fff;
     border: 5px solid #276282;
   }
+  .contact-wrapper {
+    width: 900px;
+    display: block;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #eff8fc;
+    border-radius: 5px;
+  }
+  .contact-wrapper .hero-wrapper {
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #276282;
+    margin-bottom: 20px;
+  }
+  .contact-wrapper h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #276282;
+    margin-bottom: 16px;
+  }
+  .contact-wrapper p {
+    color: #276282;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .contact-wrapper a {
+    color: #276282;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 12px;
+    font-size: 18px;
+  }
+  .contact-wrapper a:last-of-type {
+    margin-right: 0;
+  }
+  .contact-wrapper a:hover {
+    text-decoration: underline;
+  }
 }
 
 @media screen and (max-width: 768px) {
