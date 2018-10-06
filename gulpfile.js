@@ -11,7 +11,7 @@ var fs = require('fs'),
 gulp.task('sass', function () {
   gulp.src('./_src/sass/**/*.scss')
     .pipe(sass({ outputStyle: 'expanded' }))
-    .pipe(gulp.dest('./www/css/'));
+    .pipe(gulp.dest('./docs/css/'));
 });
 
 //自動監視のタスクを作成(sass-watchと名付ける)
@@ -37,7 +37,7 @@ gulp.task('ejs', function () {
     .pipe(ejs({
       jsonData: json
     }))
-    .pipe(gulp.dest('./www/'));
+    .pipe(gulp.dest('./docs/'));
 });
 
 //自動監視のタスクを作成
