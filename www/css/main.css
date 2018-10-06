@@ -33,7 +33,7 @@ header.main-header h1 a:hover {
   width: 900px;
   display: block;
   margin: 30px auto;
-  padding: 30px;
+  padding: 30px 30px 20px;
   background-color: #eff8fc;
   border-radius: 5px;
 }
@@ -125,7 +125,7 @@ header.main-header h1 a:hover {
     width: 100%;
     box-sizing: border-box;
     margin: 0 0 15px;
-    padding: 12px;
+    padding: 12px 12px 2px;
   }
   .btn-wrapper li a {
     height: 26px;
