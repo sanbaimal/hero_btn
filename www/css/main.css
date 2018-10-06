@@ -1,7 +1,7 @@
 @charset "UTF-8";
 body.main-body {
   background-color: #5093b7;
-  font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体',sans-serif;
+  font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
 }
 
 @media screen and (min-width: 769px) {
@@ -12,12 +12,20 @@ body.main-body {
     display: block;
   }
   header.main-header h1 {
-    color: #fff;
-    font-weight: bold;
-    font-size: 72px;
     text-align: center;
     display: block;
     margin: 0px auto;
+  }
+  header.main-header h1 a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 72px;
+    display: inline-block;
+    margin: 0;
+    text-decoration: none;
+  }
+  header.main-header h1 a:hover {
+    color: #5093b7;
   }
   .btn-wrapper {
     width: 900px;
