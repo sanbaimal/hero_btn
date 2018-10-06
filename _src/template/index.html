@@ -10,9 +10,9 @@ var data = jsonData;
 </head>
 <body>
   タイトルは
-  <%= data.voice.category.a %>
+  <%= data.voice.category[0].name %>
   ディスクリプションは
-  <%= data.voice.category.b %>
+  <%= data.voice.category[1].name %>
 </body>
 
 </html>

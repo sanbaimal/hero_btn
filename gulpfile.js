@@ -43,7 +43,5 @@ gulp.task('ejs', function () {
 //自動監視のタスクを作成
 gulp.task('ejs-watch', ['ejs'], function () {
   var watcherjson = gulp.watch('./_src/data/**/*.json', ['ejs']);
-  var watcherhtml = gulp.watch('./_src/template/**/*.html', ['ejs']);
   watcherjson.on('change', function (event) { });
-  watcherhtml.on('change', function (event) { });
 });
