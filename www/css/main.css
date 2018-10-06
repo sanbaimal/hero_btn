@@ -88,15 +88,18 @@ header.main-header .tutui a:hover {
   margin-right: 6px;
   margin-bottom: 10px;
   border-radius: 4px;
-}
-
-.btn-wrapper li:hover {
-  background-color: #eff8fc;
+  transition: all .3s;
 }
 
 .btn-wrapper li:hover a {
   color: #276282;
   font-weight: bold;
+}
+
+.btn-wrapper li:hover a:after {
+  bottom: 0;
+  background-color: #eff8fc;
+  height: 100%;
 }
 
 .btn-wrapper li a {
@@ -109,6 +112,22 @@ header.main-header .tutui a:hover {
   font-weight: bold;
   color: #fff;
   border: 5px solid #276282;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.btn-wrapper li a:after {
+  position: absolute;
+  display: block;
+  content: '';
+  bottom: -100%;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  transition: all .3s;
+  z-index: -1;
 }
 
 .contact-wrapper {
