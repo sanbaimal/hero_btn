@@ -1,6 +1,7 @@
 @charset "UTF-8";
-body {
-  background-color: #45aae0;
+body.main-body {
+  background-color: #5093b7;
+  font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体',sans-serif;
 }
 
 @media screen and (min-width: 769px) {
@@ -23,16 +24,21 @@ body {
     display: block;
     margin: 30px auto;
     padding: 30px;
-    border-radius: 30px;
-    background-color: #97d0ef;
+    background-color: #eff8fc;
+    border-radius: 5px;
   }
   .btn-wrapper li {
     display: inline-block;
-    background-color: #fff;
-    border-radius: 25px;
+    background-color: #276282;
     text-align: center;
-    border: 4px solid #276282;
     margin-right: 2px;
+  }
+  .btn-wrapper li:hover {
+    background-color: #eff8fc;
+  }
+  .btn-wrapper li:hover a {
+    color: #276282;
+    font-weight: bold;
   }
   .btn-wrapper li a {
     height: 36px;
@@ -41,7 +47,8 @@ body {
     line-height: 36px;
     text-decoration: none;
     font-weight: bold;
-    color: #000;
+    color: #fff;
+    border: 5px solid #276282;
   }
 }
 
