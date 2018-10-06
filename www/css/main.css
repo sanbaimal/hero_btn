@@ -37,6 +37,23 @@ header.main-header h1 a.h1-large {
   font-size: 110px;
 }
 
+header.main-header h1 span {
+  color: #fff;
+  font-weight: bold;
+  font-size: 72px;
+  display: inline-block;
+  margin: 0;
+  text-decoration: none;
+}
+
+header.main-header h1 span.h1-small {
+  font-size: 53px;
+}
+
+header.main-header h1 span.h1-large {
+  font-size: 110px;
+}
+
 header.main-header .tutui {
   width: 960px;
   margin: 0 auto;
@@ -144,13 +161,13 @@ header.main-header .tutui a:hover {
   header.main-header {
     padding: 32px 0 12px;
   }
-  header.main-header h1 a {
+  header.main-header h1 a, header.main-header h1 span {
     font-size: 36px;
   }
-  header.main-header h1 a.h1-small {
+  header.main-header h1 a.h1-small, header.main-header h1 span.h1-small {
     font-size: 26px;
   }
-  header.main-header h1 a.h1-large {
+  header.main-header h1 a.h1-large, header.main-header h1 span.h1-large {
     font-size: 46px;
   }
   header.main-header .tutui {
