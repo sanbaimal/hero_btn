@@ -2,14 +2,314 @@
   "voice": {
     "category": [
       {
-        "name": "おー",
-        "en": "",
+        "name": "あ",
+        "en": "a",
+        "num": "5"
+      }
+      ,{
+        "name": "あほ",
+        "en": "aho",
+        "num": "1"
+      }
+      ,{
+        "name": "あい",
+        "en": "ai",
+        "num": "5"
+      }
+      ,{
+        "name": "アカペラ",
+        "en": "akapera",
+        "num": "1"
+      }
+      ,{
+        "name": "あん",
+        "en": "an",
+        "num": "1"
+      }
+      ,{
+        "name": "ばか",
+        "en": "baka",
+        "num": "1"
+      }
+      ,{
+        "name": "カウントダウン",
+        "en": "countdown",
+        "num": "1"
+      }
+      ,{
+        "name": "大好き",
+        "en": "daisuki",
+        "num": "1"
+      }
+      ,{
+        "name": "ですね",
+        "en": "desune",
+        "num": "1"
+      }
+      ,{
+        "name": "え",
+        "en": "e",
+        "num": "1"
+      }
+      ,{
+        "name": "えへへ",
+        "en": "ehehe",
+        "num": "1"
+      }
+      ,{
+        "name": "エルモ",
+        "en": "erumo",
+        "num": "1"
+      }
+      ,{
+        "name": "えーと",
+        "en": "eto",
+        "num": "3"
+      }
+      ,{
+        "name": "ガンバ",
+        "en": "ganba",
+        "num": "1"
+      }
+      ,{
+        "name": "鼻歌",
+        "en": "hanauta",
+        "num": "1"
+      }
+      ,{
+        "name": "早口言葉",
+        "en": "hayakuti",
+        "num": "1"
+      }
+      ,{
+        "name": "ほい",
+        "en": "hoi",
+        "num": "1"
+      }
+      ,{
+        "name": "ほれ",
+        "en": "hore",
+        "num": "1"
+      }
+      ,{
+        "name": "ほう",
+        "en": "hou",
+        "num": "1"
+      }
+      ,{
+        "name": "ふん",
+        "en": "hun",
+        "num": "1"
+      }
+      ,{
+        "name": "いえい",
+        "en": "iei",
+        "num": "1"
+      }
+      ,{
+        "name": "いいよね",
+        "en": "iiyone",
+        "num": "1"
+      }
+      ,{
+        "name": "言うなし",
+        "en": "iunasi",
+        "num": "1"
+      }
+      ,{
+        "name": "自己紹介",
+        "en": "jikosyokai",
+        "num": "1"
+      }
+      ,{
+        "name": "きふふ",
+        "en": "kifufu",
+        "num": "1"
+      }
+      ,{
+        "name": "投げキッス",
+        "en": "kiss",
+        "num": "2"
+      }
+      ,{
+        "name": "こんばんは",
+        "en": "konbanha",
+        "num": "1"
+      }
+      ,{
+        "name": "こんヒーロー",
+        "en": "konhero",
+        "num": "1"
+      }
+      ,{
+        "name": "リップロール",
+        "en": "lips",
+        "num": "2"
+      }
+      ,{
+        "name": "マ？",
+        "en": "ma",
+        "num": "1"
+      }
+      ,{
+        "name": "ままま",
+        "en": "mamama",
+        "num": "1"
+      }
+      ,{
+        "name": "まって",
+        "en": "matte",
+        "num": "1"
+      }
+      ,{
+        "name": "光彦",
+        "en": "mituhiko",
+        "num": "1"
+      }
+      ,{
+        "name": "ん",
+        "en": "n",
+        "num": "7"
+      }
+      ,{
+        "name": "なんで",
+        "en": "nande",
+        "num": "1"
+      }
+      ,{
+        "name": "なに歌おう",
+        "en": "naniutao",
+        "num": "1"
+      }
+      ,{
+        "name": "ナルト",
+        "en": "naruto",
+        "num": "1"
+      }
+      ,{
+        "name": "んで",
+        "en": "nde",
+        "num": "1"
+      }
+      ,{
+        "name": "んふ",
+        "en": "nfu",
         "num": "4"
-      },
-      {
-        "name": "わー",
-        "en": "",
-        "num": "12"
+      }
+      ,{
+        "name": "にひひ",
+        "en": "nihihi",
+        "num": "1"
+      }
+      ,{
+        "name": "んーとね",
+        "en": "ntone",
+        "num": "1"
+      }
+      ,{
+        "name": "怒って",
+        "en": "okotte",
+        "num": "1"
+      }
+      ,{
+        "name": "お願いダーリン",
+        "en": "onegai",
+        "num": "1"
+      }
+      ,{
+        "name": "おつヒーロー",
+        "en": "otu",
+        "num": "1"
+      }
+      ,{
+        "name": "ピーユーパーゲー",
+        "en": "pupg",
+        "num": "1"
+      }
+      ,{
+        "name": "ロキ",
+        "en": "roki",
+        "num": "1"
+      }
+      ,{
+        "name": "すこ",
+        "en": "suko",
+        "num": "2"
+      }
+      ,{
+        "name": "照れる",
+        "en": "tere",
+        "num": "1"
+      }
+      ,{
+        "name": "てゆって",
+        "en": "teyutte",
+        "num": "1"
+      }
+      ,{
+        "name": "ありがとう",
+        "en": "thanks",
+        "num": "1"
+      }
+      ,{
+        "name": "ちょい待ち",
+        "en": "tyoimati",
+        "num": "2"
+      }
+      ,{
+        "name": "うん",
+        "en": "un",
+        "num": "1"
+      }
+      ,{
+        "name": "うずうず",
+        "en": "uzuuzu",
+        "num": "1"
+      }
+      ,{
+        "name": "わかんない",
+        "en": "wakannai",
+        "num": "1"
+      }
+      ,{
+        "name": "わかる",
+        "en": "wakaru",
+        "num": "2"
+      }
+      ,{
+        "name": "わかった",
+        "en": "wakatta",
+        "num": "1"
+      }
+      ,{
+        "name": "笑い声",
+        "en": "warai",
+        "num": "5"
+      }
+      ,{
+        "name": "や",
+        "en": "ya",
+        "num": "1"
+      }
+      ,{
+        "name": "やっほー",
+        "en": "yahho",
+        "num": "1"
+      }
+      ,{
+        "name": "やめて",
+        "en": "yamete",
+        "num": "1"
+      }
+      ,{
+        "name": "よいしょ",
+        "en": "yoisyo",
+        "num": "2"
+      }
+      ,{
+        "name": "よし",
+        "en": "yosi",
+        "num": "1"
       }
     ]
   }
