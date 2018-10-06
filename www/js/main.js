@@ -36,14 +36,22 @@ var playSound = function (buffer) {
 };
 
 // main
-window.onload = function () {
+function AudioPLay(voice) {
   // サウンドを読み込む
-  getAudioBuffer('/vo/se.mp3', function (buffer) {
-    // 読み込み完了後にボタンにクリックイベントを登録
-    var btn = document.getElementById('btn');
-    btn.onclick = function () {
-      // サウンドを再生
-      playSound(buffer);
-    };
+  getAudioBuffer('/vo/' + voice, function (buffer) {
+    // サウンドを再生
+    playSound(buffer);
   });
-};
+}
+
+// window.onload = function () {
+//   // サウンドを読み込む
+//   getAudioBuffer('/vo/se.mp3', function (buffer) {
+//     // 読み込み完了後にボタンにクリックイベントを登録
+//     var btn = document.getElementById('btn');
+//     btn.onclick = function () {
+//       // サウンドを再生
+//       playSound(buffer);
+//     };
+//   });
+// };

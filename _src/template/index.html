@@ -9,19 +9,19 @@ var data = jsonData;
   <meta name="keywords" content="皆守ひいろ,VTuber,ひいろ">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
   <link rel="stylesheet" type="text/css" href="/css/reset.css">
-  <script src='/js/main.js'></script>
   <title>タイトル</title>
 </head>
 <body>
   <h1>ひいろボタン</h1>
-  <button id='btn'>Play</button>
   <ul>
-    <% for (var item in data.voice.category) { %>
+<% for (var item in data.voice.category) { %>
+<% for (var i = 1; i < data.voice.category[item].num; i++) { %>
     <li>
-      <%= data.voice.category[item].name %>
+      <a href="javascript:void(0)" onclick="AudioPLay('se.mp3')"><%= data.voice.category[item].name %>_<%= i %></a>
     </li>
-    <% } %>
+<% } %>
+<% } %>
   </ul>
+  <script src='/js/main.js'></script>
 </body>
-
 </html>
