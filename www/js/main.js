@@ -1,5 +1,6 @@
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 var context = new AudioContext();
+var source;
 
 // Audio 用の buffer を読み込む
 var getAudioBuffer = function (url, fn) {
@@ -26,7 +27,7 @@ var getAudioBuffer = function (url, fn) {
 // サウンドを再生
 var playSound = function (buffer) {
   // source を作成
-  var source = context.createBufferSource();
+  source = context.createBufferSource();
   // buffer をセット
   source.buffer = buffer;
   // context に connect
@@ -35,8 +36,16 @@ var playSound = function (buffer) {
   source.start(0);
 };
 
+// サウンドを停止
+var stopSound = function() {
+  if (source != null) {
+    source.stop(0);
+  }
+}
+
 // main
 function AudioPLay(voice) {
+  stopSound();
   // サウンドを読み込む
   getAudioBuffer('/vo/' + voice, function (buffer) {
     // サウンドを再生
