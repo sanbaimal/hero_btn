@@ -6,7 +6,7 @@ body.main-body {
 
 header.main-header {
   background-color: #276282;
-  padding: 60px 0;
+  padding: 60px 0 15px;
   display: block;
 }
 
@@ -35,6 +35,24 @@ header.main-header h1 a.h1-small {
 
 header.main-header h1 a.h1-large {
   font-size: 110px;
+}
+
+header.main-header .tutui {
+  width: 960px;
+  margin: 0 auto;
+  text-align: right;
+  margin-top: 40px;
+}
+
+header.main-header .tutui a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+header.main-header .tutui a:hover {
+  color: #5093b7;
 }
 
 .btn-wrapper {
@@ -124,7 +142,7 @@ header.main-header h1 a.h1-large {
 @media screen and (max-width: 768px) {
   /*　画面サイズ 768pxまで適用　*/
   header.main-header {
-    padding: 32px 0;
+    padding: 32px 0 12px;
   }
   header.main-header h1 a {
     font-size: 36px;
@@ -134,6 +152,15 @@ header.main-header h1 a.h1-large {
   }
   header.main-header h1 a.h1-large {
     font-size: 46px;
+  }
+  header.main-header .tutui {
+    width: 100%;
+    padding: 0 12px;
+    margin-top: 9px;
+    box-sizing: border-box;
+  }
+  header.main-header .tutui a {
+    font-size: 14px;
   }
   .btn-wrapper {
     width: 100%;
