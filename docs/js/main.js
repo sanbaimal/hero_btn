@@ -70,7 +70,7 @@ var stopSound = function() {
 window.onload = function () {
   var btn = document.getElementsByClassName('btn')
   getAudioBuffer('vo/hi.mp3', function (buffer) {
-
+    playSound(buffer);
   });
   for (let i = 0; i < btn.length; i++) {
     btn[i].onclick = function () {
