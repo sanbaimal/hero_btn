@@ -67,17 +67,17 @@ window.onload = function () {
     };
   });
 
-  var btn = document.getElementsByClassName('btn')
-    for (let i = 0; i < btn.length; i++) {
-      btn[i].onclick = function () {
-        var voicesrc = this.getAttribute('data-voisrc');
-        console.log(voicesrc);
-        getAudioBuffer('vo/' + voicesrc + '.mp3', function (buffer) {
-            // サウンドを再生
-            playSound(buffer);
-        });
-      };
-    }
+  // var btn = document.getElementsByClassName('btn')
+  //   for (let i = 0; i < btn.length; i++) {
+  //     btn[i].onclick = function () {
+  //       var voicesrc = this.getAttribute('data-voisrc');
+  //       console.log(voicesrc);
+  //       getAudioBuffer('vo/' + voicesrc + '.mp3', function (buffer) {
+  //           // サウンドを再生
+  //           playSound(buffer);
+  //       });
+  //     };
+  //   }
 
 };
 
