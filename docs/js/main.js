@@ -150,14 +150,17 @@
 (function(wa){
 
   var event = "click";
-  document.addEventListener(event, function() {
-    // 無音再生
-    wa.playSilent();
-
-    // ロード後コールバック再生
-    wa.loadFile("vo/a2.mp3", function(buffer) {
-      wa.play(buffer);
-    });
-  });
+  var btn = document.getElementsByClassName('btn')
+  for (let i = 0; i < btn.length; i++) {
+    btn[i].addEventListener(event, function () {
+      var voicesrc = this.getAttribute('data-voisrc');
+        // 無音再生
+        wa.playSilent();
+        // ロード後コールバック再生
+        wa.loadFile('vo/' + voicesrc + '.mp3', function(buffer) {
+          wa.play(buffer);
+        });
+      });
+  }
 
 }(wa));
