@@ -46,23 +46,23 @@ var stopSound = function() {
 }
 
 // main
-function AudioPLay(voice) {
-  stopSound();
-  // サウンドを読み込む
-  getAudioBuffer('vo/' + voice, function (buffer) {
-    // サウンドを再生
-    playSound(buffer);
-  });
-}
-
-// window.onload = function () {
+// function AudioPLay(voice) {
+//   stopSound();
 //   // サウンドを読み込む
-//   getAudioBuffer('/vo/se.mp3', function (buffer) {
-//     // 読み込み完了後にボタンにクリックイベントを登録
-//     var btn = document.getElementById('btn');
-//     btn.onclick = function () {
-//       // サウンドを再生
-//       playSound(buffer);
-//     };
+//   getAudioBuffer('vo/' + voice, function (buffer) {
+//     // サウンドを再生
+//     playSound(buffer);
 //   });
-// };
+// }
+
+window.onload = function () {
+  // サウンドを読み込む
+  getAudioBuffer('vo/hi.mp3', function (buffer) {
+    // 読み込み完了後にボタンにクリックイベントを登録
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+      // サウンドを再生
+      playSound(buffer);
+    };
+  });
+};
