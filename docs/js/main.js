@@ -1,70 +1,9 @@
 
-// サウンドを停止
-// var stopSound = function() {
-//   if (source != null) {
-//     source.stop(0);
-//   }
-// }
-
-// main
-// function AudioPLay(voice) {
-//   stopSound();
-//   // サウンドを読み込む
-//   getAudioBuffer('vo/' + voice, function (buffer) {
-//     // サウンドを再生
-//     playSound(buffer);
-//   });
-// }
-
-// window.onload = function () {
-//   // サウンドを読み込む
-//   getAudioBuffer('vo/a1.mp3', function (buffer) {
-//     // 読み込み完了後にボタンにクリックイベントを登録
-//     var btn = document.getElementsByClassName('btn')
-//     for (let i = 0; i < btn.length; i++) {
-//       btn[i].onclick = function () {
-//         var voicesrc = this.getAttribute('data-voisrc');
-//         console.log(voicesrc);
-//         getAudioBuffer('vo/a1.mp3', function (buffer) {
-//             // サウンドを再生
-//             playSound(buffer);
-//         });
-//       };
-//     }
-//   });
-
-  // var btn = document.getElementsByClassName('btn')
-  //   for (let i = 0; i < btn.length; i++) {
-  //     btn[i].onclick = function () {
-  //       var voicesrc = this.getAttribute('data-voisrc');
-  //       console.log(voicesrc);
-  //       getAudioBuffer('vo/' + voicesrc + '.mp3', function (buffer) {
-  //           // サウンドを再生
-  //           playSound(buffer);
-  //       });
-  //     };
-  //   }
-
-// };
-
-// window.onload = function () {
-//   var btn = document.getElementsByClassName('btn')
-//     for (let i = 0; i < btn.length; i++) {
-//       btn[i].onclick = function () {
-//         var voicesrc = this.getAttribute('data-voisrc');
-//         console.log(voicesrc);
-//         getAudioBuffer('vo/' + voicesrc + '.mp3', function (buffer) {
-//             // サウンドを再生
-//             playSound(buffer);
-//         });
-//       };
-//     }
-// };
-
 // 即席ライブラリ
 // Ref: http://phiary.me/webaudio-api-getting-started/
 ;(function(window){
-
+  var source;
+  var playflag;
   var wa = {
 
     context: null,
@@ -83,7 +22,7 @@
       src.start(0);
     },
 
-    play: function(buffer) {
+    play: function (buffer) {
       // ファイル名で指定
       if (typeof buffer === "string") {
         buffer = this._buffers[buffer];
@@ -94,10 +33,19 @@
       }
 
       var context = this.context;
-      var source = context.createBufferSource();
+      source = context.createBufferSource();
       source.buffer = buffer;
       source.connect(context.destination);
       source.start(0);
+      playflag = true;
+    },
+
+    stop: function () {
+      // ファイル名で指定
+      if (playflag == true) {
+        source.stop(0);
+        playflag = false;
+      }
     },
 
     loadFile: function(src, cb) {
@@ -153,6 +101,7 @@
   var btn = document.getElementsByClassName('btn')
   for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener(event, function () {
+      wa.stop();
       var voicesrc = this.getAttribute('data-voisrc');
         // 無音再生
         wa.playSilent();
