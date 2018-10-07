@@ -16,7 +16,7 @@ var data = jsonData;
 <body class="main-body">
   <header class="main-header">
     <h1>
-      <a href="javascript:void(0)" onclick="AudioPLay('hi.mp3')" class="h1-large">ひ</a>
+      <a href="javascript:void(0)" class="h1-large btn" data-voisrc='hi'>ひ</a>
       <span class="h1-small">い</span>
       <span class="h1-small">ろ</span>
       <span>ボ</span>
@@ -33,9 +33,9 @@ var data = jsonData;
     <ul class="btn-wrapper">
 <% for (var item in data.voice.category) { %>
 <% for (var i = 1; i <= data.voice.category[item].num; i++) { %>
-      <!-- <li>
-        <a href="javascript:void(0)" onclick="AudioPLay('<%= data.voice.category[item].en %><%= i %>.mp3')"><%= data.voice.category[item].name %> <%= i %></a>
-      </li> -->
+      <li>
+        <a href="javascript:void(0)" class='btn' data-voisrc='<%= data.voice.category[item].en %><%= i %>'><%= data.voice.category[item].name %> <%= i %></a>
+      </li>
 <% } %>
 <% } %>
     </ul>
