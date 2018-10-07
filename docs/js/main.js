@@ -55,8 +55,23 @@ var stopSound = function() {
 //   });
 // }
 
+// window.onload = function () {
+//   // サウンドを読み込む
+//   getAudioBuffer('vo/hi.mp3', function (buffer) {
+//     // 読み込み完了後にボタンにクリックイベントを登録
+//     var btn = document.getElementById('btn');
+//     btn.onclick = function () {
+//       // サウンドを再生
+//       playSound(buffer);
+//     };
+//   });
+// };
+
 window.onload = function () {
   var btn = document.getElementsByClassName('btn')
+  getAudioBuffer('vo/hi.mp3', function (buffer) {
+
+  });
   for (let i = 0; i < btn.length; i++) {
     btn[i].onclick = function () {
       var voicesrc = this.getAttribute('data-voisrc');
