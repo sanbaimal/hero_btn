@@ -149,17 +149,15 @@
 
 (function(wa){
 
-  window.onload = function() {
-    // ページ読み込みと同時にロード
-    wa.loadFile('vo/a1.mp3', function(buffer) {
-      // wa.play(buffer);
+  var event = "click";
+  document.addEventListener(event, function() {
+    // 無音再生
+    wa.playSilent();
 
-      // ユーザーイベント
-      var event = "click";
-      document.addEventListener(event, function() {
-        wa.play("a1.mp3");
-      });
+    // ロード後コールバック再生
+    wa.loadFile("vo/a2.mp3", function(buffer) {
+      wa.play(buffer);
     });
-  }
+  });
 
 }(wa));
