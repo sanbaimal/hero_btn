@@ -1,49 +1,10 @@
-window.AudioContext = window.AudioContext || window.webkitAudioContext;
-var context = new AudioContext();
-var source;
-
-// Audio 用の buffer を読み込む
-var getAudioBuffer = function (url, fn) {
-  var req = new XMLHttpRequest();
-  // array buffer を指定
-  req.responseType = 'arraybuffer';
-
-  req.onreadystatechange = function () {
-    if (req.readyState === 4) {
-      if (req.status === 0 || req.status === 200) {
-        // array buffer を audio buffer に変換
-        context.decodeAudioData(req.response, function (buffer) {
-          // コールバックを実行
-          fn(buffer);
-        });
-      }
-    }
-  };
-
-  req.open('GET', url, true);
-  req.send('');
-};
-
-// サウンドを再生
-var playSound = function (buffer) {
-  context = new AudioContext();
-  context.createBufferSource().start(0);
-  // source を作成
-  source = context.createBufferSource();
-  // buffer をセット
-  source.buffer = buffer;
-  // context に connect
-  source.connect(context.destination);
-  // 再生
-  source.start(0);
-};
 
 // サウンドを停止
-var stopSound = function() {
-  if (source != null) {
-    source.stop(0);
-  }
-}
+// var stopSound = function() {
+//   if (source != null) {
+//     source.stop(0);
+//   }
+// }
 
 // main
 // function AudioPLay(voice) {
@@ -55,22 +16,22 @@ var stopSound = function() {
 //   });
 // }
 
-window.onload = function () {
-  // サウンドを読み込む
-  getAudioBuffer('vo/a1.mp3', function (buffer) {
-    // 読み込み完了後にボタンにクリックイベントを登録
-    var btn = document.getElementsByClassName('btn')
-    for (let i = 0; i < btn.length; i++) {
-      btn[i].onclick = function () {
-        var voicesrc = this.getAttribute('data-voisrc');
-        console.log(voicesrc);
-        getAudioBuffer('vo/a1.mp3', function (buffer) {
-            // サウンドを再生
-            playSound(buffer);
-        });
-      };
-    }
-  });
+// window.onload = function () {
+//   // サウンドを読み込む
+//   getAudioBuffer('vo/a1.mp3', function (buffer) {
+//     // 読み込み完了後にボタンにクリックイベントを登録
+//     var btn = document.getElementsByClassName('btn')
+//     for (let i = 0; i < btn.length; i++) {
+//       btn[i].onclick = function () {
+//         var voicesrc = this.getAttribute('data-voisrc');
+//         console.log(voicesrc);
+//         getAudioBuffer('vo/a1.mp3', function (buffer) {
+//             // サウンドを再生
+//             playSound(buffer);
+//         });
+//       };
+//     }
+//   });
 
   // var btn = document.getElementsByClassName('btn')
   //   for (let i = 0; i < btn.length; i++) {
@@ -84,7 +45,7 @@ window.onload = function () {
   //     };
   //   }
 
-};
+// };
 
 // window.onload = function () {
 //   var btn = document.getElementsByClassName('btn')
@@ -99,3 +60,106 @@ window.onload = function () {
 //       };
 //     }
 // };
+
+// 即席ライブラリ
+// Ref: http://phiary.me/webaudio-api-getting-started/
+;(function(window){
+
+  var wa = {
+
+    context: null,
+    _buffers: {},
+
+    _initialize: function() {
+      this.context = new (window.AudioContext || window.webkitAudioContext)();
+    },
+
+    playSilent: function() {
+      var context = this.context;
+      var buf = context.createBuffer(1, 1, 22050);
+      var src = context.createBufferSource();
+      src.buffer = buf;
+      src.connect(context.destination);
+      src.start(0);
+    },
+
+    play: function(buffer) {
+      // ファイル名で指定
+      if (typeof buffer === "string") {
+        buffer = this._buffers[buffer];
+        if (!buffer) {
+          console.error('ファイルが用意できてません!');
+          return;
+        }
+      }
+
+      var context = this.context;
+      var source = context.createBufferSource();
+      source.buffer = buffer;
+      source.connect(context.destination);
+      source.start(0);
+    },
+
+    loadFile: function(src, cb) {
+      var self = this;
+      var context = this.context;
+      var xml = new XMLHttpRequest();
+      xml.open('GET', src);
+      xml.onreadystatechange = function() {
+        if (xml.readyState === 4) {
+          if ([200, 201, 0].indexOf(xml.status) !== -1) {
+
+            var data = xml.response;
+
+            // webaudio 用に変換
+            context.decodeAudioData(data, function(buffer) {
+              // buffer登録
+              var s = src.split('/');
+              var key = s[s.length-1];
+              self._buffers[key] = buffer;
+
+              // コールバック
+              cb(buffer);
+            });
+
+          } else if (xml.status === 404) {
+            // not found
+            console.error("not found");
+          } else {
+            // サーバーエラー
+            console.error("server error");
+          }
+        }
+      };
+
+      xml.responseType = 'arraybuffer';
+
+      xml.send(null);
+    },
+
+  };
+
+  wa._initialize(); // audioContextを新規作成
+
+  window.wa = wa;
+
+}(window));
+
+
+
+(function(wa){
+
+  window.onload = function() {
+    // ページ読み込みと同時にロード
+    wa.loadFile('vo/a1.mp3', function(buffer) {
+      // wa.play(buffer);
+
+      // ユーザーイベント
+      var event = "click";
+      document.addEventListener(event, function() {
+        wa.play("a1.mp3");
+      });
+    });
+  }
+
+}(wa));
