@@ -175,6 +175,45 @@ header.main-header .tutui a:hover {
   text-decoration: underline;
 }
 
+.news-wrapper {
+  width: 900px;
+  display: block;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #eff8fc;
+  border-radius: 5px;
+}
+
+.news-wrapper h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #276282;
+  margin-bottom: 16px;
+}
+
+.news-wrapper p {
+  color: #276282;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.news-wrapper a {
+  color: #276282;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.news-wrapper a:last-of-type {
+  margin-right: 0;
+}
+
+.news-wrapper a:hover {
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 768px) {
   /*　画面サイズ 768pxまで適用　*/
   header.main-header {
@@ -228,6 +267,24 @@ header.main-header .tutui a:hover {
     font-size: 14px;
   }
   .contact-wrapper p {
+    font-size: 14px;
+  }
+  .news-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    margin-bottom: 12px;
+    padding: 12px;
+  }
+  .news-wrapper h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .news-wrapper a {
+    margin-right: 6px;
+    font-size: 14px;
+  }
+  .news-wrapper p {
     font-size: 14px;
   }
   .main-wrapper {
